@@ -8,5 +8,5 @@ import reactor.core.publisher.Mono;
  */
 public interface WeatherService {
 
-    public Mono<String> getWeather01(String city);
+    public Mono<String> getWeatherBySimpleWebClient(String city);
 }

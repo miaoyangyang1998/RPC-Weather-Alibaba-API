@@ -9,7 +9,10 @@ import reactor.core.publisher.Mono;
  * @author :Yangyang Miao
  * @date :2023-07-30 00:54:00
  */
-public interface WeatherHTTPService {
-    @GetExchange(url = "/area-to-weather-date", accept = "application/json")
-    public Mono<String> getWeather02(@RequestParam("area") String city, @RequestHeader("Authorization") String auth);
+public interface WeatherHTTPInterfaceService {
+
+
+
+    @GetExchange(url = "https://ali-weather.showapi.com/area-to-weather-date", accept = "application/json")
+    public Mono<String> getWeatherByHTTPInterface(@RequestParam("area") String city, @RequestHeader("Authorization") String auth);
 }
