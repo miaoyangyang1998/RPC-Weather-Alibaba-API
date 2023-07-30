@@ -11,8 +11,6 @@ import reactor.core.publisher.Mono;
  */
 public interface WeatherHTTPInterfaceService {
 
-
-
     @GetExchange(url = "https://ali-weather.showapi.com/area-to-weather-date", accept = "application/json")
     public Mono<String> getWeatherByHTTPInterface(@RequestParam("area") String city, @RequestHeader("Authorization") String auth);
 }

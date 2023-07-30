@@ -17,8 +17,8 @@ import java.util.Map;
 @Service
 public class WeatherServiceImpl implements WeatherService {
 
-    @Value("${uri}")
-    private String uri;
+    @Value("${weather.uri}")
+    private String weatherUri;
 
     @Value("${header.name}")
     private String headerName;
@@ -42,7 +42,7 @@ public class WeatherServiceImpl implements WeatherService {
         // 此处的get也可以改成post等其他请求
         // params为请求参数
         Mono<String> resultJson = client.get()
-                .uri(uri + "?" + queryParamKeyArea + "={area}", params)
+                .uri(weatherUri + "?" + queryParamKeyArea + "={area}", params)
                 .accept(MediaType.APPLICATION_JSON)
                 .header(headerName, "APPCODE " + headerValue)
                 .retrieve()
