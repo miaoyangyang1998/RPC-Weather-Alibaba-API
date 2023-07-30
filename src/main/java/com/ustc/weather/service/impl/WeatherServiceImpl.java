@@ -31,7 +31,7 @@ public class WeatherServiceImpl implements WeatherService {
 
 
     @Override
-    public Mono<String> getWeather(String city) {
+    public Mono<String> getWeather01(String city) {
         // 远程调用阿里云API
         // 1.创建WebClient
         WebClient client = WebClient.create();
